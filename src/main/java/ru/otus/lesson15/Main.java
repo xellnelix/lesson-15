@@ -20,7 +20,7 @@ public class Main {
 		Employee emp = new Employee("Test", 40);
 		Employee emp2 = new Employee("Test2", 25);
 		Employee emp3 = new Employee("Test3", 50);
-		List<Employee> testList4 = new ArrayList<Employee>(Arrays.asList(emp, emp2, emp3));
+		List<Employee> testList4 = new ArrayList<>(Arrays.asList(emp, emp2, emp3));
 		List<String> testListNames = getAllNames(testList4);
 		System.out.println(testListNames);
 		List<Employee> testList5 = checkAge(testList4, 33);
@@ -62,7 +62,7 @@ public class Main {
 	public static List<String> getAllNames(List<Employee> employees) {
 		List<String> names = new ArrayList<>();
 		for (Employee emp : employees) {
-			names.add(emp.name);
+			names.add(emp.getName());
 		}
 		return names;
 	}
@@ -70,7 +70,7 @@ public class Main {
 	public static List<Employee> checkAge(List<Employee> employees, int age) {
 		List<Employee> correctAgeEmployees = new ArrayList<>();
 		for (Employee emp : employees) {
-			if (emp.age >= age) {
+			if (emp.getAge() >= age) {
 				correctAgeEmployees.add(emp);
 			}
 		}
@@ -80,7 +80,7 @@ public class Main {
 	private static boolean checkAverageAge(List<Employee> employees, int averageAge) {
 		int sumAge = 0;
 		for (Employee emp : employees) {
-			sumAge += emp.age;
+			sumAge += emp.getAge();
 		}
 		return sumAge / employees.size() > averageAge;
 	}
@@ -88,7 +88,7 @@ public class Main {
 	public static Employee youngestEmployee(List<Employee> employees) {
 		Employee youngest = employees.get(0);
 		for (Employee emp : employees) {
-			if (youngest.age > emp.age) {
+			if (youngest.getAge() > emp.getAge()) {
 				youngest = emp;
 			}
 		}
