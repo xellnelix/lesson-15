@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		List<Integer> testList;
 		List<Integer> testList2 = List.of(1, 3, 5, 7, 9, 11, 13);
-		List<Integer> testList3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+		List<Integer> testList3 = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6));
 		testList = createMinToMaxList(1, 15);
 		System.out.println(testList);
 		System.out.println(sumElements(testList2));
@@ -20,7 +20,7 @@ public class Main {
 		Employee emp = new Employee("Test", 40);
 		Employee emp2 = new Employee("Test2", 25);
 		Employee emp3 = new Employee("Test3", 50);
-		List<Employee> testList4 = new ArrayList<>(Arrays.asList(emp, emp2, emp3));
+		List<Employee> testList4 = new ArrayList<>(List.of(emp, emp2, emp3));
 		List<String> testListNames = getAllNames(testList4);
 		System.out.println(testListNames);
 		List<Employee> testList5 = checkAge(testList4, 33);
